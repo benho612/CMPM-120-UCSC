@@ -1,0 +1,117 @@
+{
+    "Title": "Project Adventuring",
+    "Body": "[PLAYER_NAME]",
+    "Credits": "Changes: Kin Yin Ho || Created by Adam Smith (amsmith@ucsc.edu).",
+    "InitialLocation": "Forest Entrance",
+    "Locations": {
+        "Forest Entrance": { 
+            "Body": "You stand at the entrance to a vast, ancient forest, [PLAYER_NAME]. The trees sway gently, whispering secrets in the wind.\n\nA faint path lies ahead, disappearing into the mist.",
+            "Mechanism": "ForestEntrance",
+            "Choices": [
+                {
+                    "Text": "Step onto the Forest Path",
+                    "Target": "Forest Path"
+                }
+            ]
+        },
+        "Forest Path": {
+            "Body": "The trail is worn and quiet. Every footstep from [PLAYER_NAME] seems to echo between the towering trunks.\n\nThree paths branch out ahead, each calling to you in a different way.",
+            "Choices": [
+                {
+                    "Text": "Whispering Grove", "Target": "Whispering Grove"
+                },
+                {
+                    "Text": "Runestone Circle", "Target": "Runestone Circle"
+                },
+                {
+                    "Text": "Wyrm's Burrow", "Target": "WyrmBurrow"
+                },
+                {
+                    "Text": "Return", "Target": "Forest Entrance"
+                }
+            ]
+        },
+        "Whispering Grove": {
+            "Body": "The air is lighter here, [PLAYER_NAME]. Leaves dance around you like playful spirits. Whispers brush against your ear — voices too soft to understand.",
+            "Choices": [
+                {
+                    "Text": "Glowing Swamp", "Target": "Glowing Swamp"
+                },
+                {
+                    "Text": "Return", "Target": "Forest Path"
+                }
+            ]
+        },
+        "Glowing Swamp": {
+            "Body": "Bioluminescent plants light the murky waters, casting a glow around [PLAYER_NAME]. Without help, it would be easy to lose your way here...",
+            "Mechanism": "GlowingSwamp",
+            "Choices": [
+                {
+                    "Text": "Return", "Target": "Whispering Grove"
+                }
+            ]
+        },
+        "Runestone Circle": {
+            "Body": "Massive stones rise from the earth, etched with glowing ancient runes. One of them hums softly as [PLAYER_NAME] approaches, almost like... an invitation.",
+            "Mechanism": "Runestone",
+            "Choices": [
+
+                {
+                    "Text": "Abandoned Shrine", "Target": "Abandoned Shrine"
+                },
+                {
+                    "Text": "Return", "Target": "Forest Path"
+                }
+            ]
+        },
+        "Abandoned Shrine": {
+            "Body": "Abandoned Shrine, a place of forgotten magic.",
+            "Mechanism": "AbandonedShrine",
+            "Choices": [
+                {
+                    "Text": "Moonstone Gate", "Target": "Moonstone Gate"
+                },
+                {
+                    "Text": "Return", "Target": "Runestone Circle"
+                }
+            ]
+        },
+        "Moonstone Gate": {
+            "Body": "Moonstone Gate stands tall, requiring special keys to pass the village.",
+            "Mechanism": "MoonstoneGate",
+            "Choices": [
+                {
+                    "Text": "Heart Tree Grove", "Target": "Heart Tree Grove"
+                },
+                {
+                    "Text": "Return", "Target": "Abandoned Shrine"
+                }
+            ]
+        },
+        "Heart Tree Grove": {
+            "Body": "The largest tree has ever seen towers before you. Its bark shimmers like gold, its branches hum with ancient power. The air feels heavy with expectation.",
+            "Mechanism": "HeartTreeGrove",
+            "Choices": [
+                {
+                    "Text": "Return", "Target": "Moonstone Gate"
+                }
+            ]
+        },
+
+        "Village": {
+            "Body": "[PLAYER_NAME] steps into the village beyond the Heart Tree. Warm light glows from every window. Children laugh. Elders sing.\n\nYet something stirs within you...",
+            "Mechanism": "Village"
+        },
+
+
+        "WyrmBurrow": {
+            "Body": "A yawning hole exhales a chill wind. Something ancient once lived here, [PLAYER_NAME] — and maybe still does.",
+            "Mechanism": "WyrmBurrow",
+            "Choices": [
+                {
+                    "Text": "Return", "Target": "Forest Path"
+                }
+            ]
+        }
+    }
+}
