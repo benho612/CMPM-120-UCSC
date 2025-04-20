@@ -49,9 +49,9 @@ class Location extends Scene {
             text = text.replace("[PLAYER_NAME]", this.engine.playerName);
         }
 
-        /*setTimeout(()=>{*/this.engine.show(text)/*}, 1000)*/;
+        setTimeout(()=>{this.engine.show(text)}, 1000);
 
-        //setTimeout(() => {
+        setTimeout(() => {
         if (locationData.Choices && locationData.Choices.length > 0) 
         {
             for (let choice of locationData.Choices) {
@@ -61,7 +61,7 @@ class Location extends Scene {
         else 
             this.engine.addChoice("The end.");
         
-        //}, 2000);
+        }, 2000);
     }
 
 
