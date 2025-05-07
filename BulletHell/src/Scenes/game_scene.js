@@ -71,14 +71,23 @@ class game_scene extends Phaser.Scene {
       this.load.setPath("./assets/");
       this.load.atlasXML("SpaceInvader", "Sprite/Spritesheet/sheet.png", "Sprite/Spritesheet/sheet.xml");
       this.load.image("heart","Sprite/PNG/UI/playerLife1_blue.png");
+      this.load.image("spaceBG","Sprite/Backgrounds/darkPurple.png");
       this.load.audio('bgm', 'Audio/bgm.mp3');
       this.load.audio('shooting','Audio/laser_shooting.wav');
+      this.load.audio('explode', 'Audio/explosionCrunch_000.ogg');
+
   }
 
   create() {
-
+    
+        //Background
+        this.bg = this.add.tileSprite(0, 0, this.scale.width, this.scale.height, 'spaceBG')
+        .setOrigin(0, 0)
+        .setScrollFactor(0);
+    
         //Timer for end_scene
         this.startTime = this.time.now;
+
         //audio
         this.background_music();
 
@@ -104,6 +113,8 @@ class game_scene extends Phaser.Scene {
 
   update() {
       let my = this.my;
+
+      this.bg.tilePositionY -= 1;  // Adjust speed as desired
 
       // PLAYER MOVEMENT
       if (this.keys.left.isDown) {
@@ -290,6 +301,7 @@ class game_scene extends Phaser.Scene {
             bullet.destroy();
             enemy.destroy();
             this.addScore(100);
+            this.sound.play('explode', { volume: 0.3 });
         });
     }
 
